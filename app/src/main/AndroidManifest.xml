@@ -9,9 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BulatDnev">
+<!--        <activity-->
+<!--            android:name=".StudentsActivity"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".ui.mark.activity.AddMarkActivty"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.activity.AddNewsActivity"
+            android:exported="false" />
         <activity
             android:name=".SpalshScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".LogInActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>

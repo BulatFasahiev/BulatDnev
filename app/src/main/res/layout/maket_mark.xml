@@ -48,7 +48,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="Загрузка..."
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/mMark"
             app:layout_constraintStart_toStartOf="parent"

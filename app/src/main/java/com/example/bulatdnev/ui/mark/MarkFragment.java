@@ -1,5 +1,6 @@
 package com.example.bulatdnev.ui.mark;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,12 +9,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.bulatdnev.R;
 import com.example.bulatdnev.ui.home.adapter.HomeAdapter;
 import com.example.bulatdnev.ui.home.modal.HomeModal;
+import com.example.bulatdnev.ui.mark.activity.AddMarkActivty;
 import com.example.bulatdnev.ui.mark.adapter.MarkAdapter;
 import com.example.bulatdnev.ui.mark.modal.MarkModal;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +36,7 @@ public class MarkFragment extends Fragment {
     private String Uid = FirebaseAuth.getInstance().getUid();
     ArrayList<MarkModal> Amodals;
     ListView list;
+    ImageButton addMark;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,13 +45,23 @@ public class MarkFragment extends Fragment {
         list=v.findViewById(R.id.markList);
         Amodals = new ArrayList<>();
 
+        addMark=v.findViewById(R.id.addMark);
+        addMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent add = new Intent(getContext(), AddMarkActivty.class);
+                startActivity(add);
+                Amodals.clear();
+                loadList();
+            }
+        });
+
         loadList();
         return v;
     }
     private void loadList() {
         db.collection("Mark")
-                .whereEqualTo("Uid", Uid)
-                .orderBy("time", Query.Direction.ASCENDING)
+                .whereEqualTo("CUid", Uid)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

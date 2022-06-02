@@ -29,120 +29,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/exitBtn"
+        app:layout_constraintBottom_toTopOf="@+id/apCreate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3">
 
-        <TextView
-            android:id="@+id/tx1"
+        <EditText
+            android:id="@+id/apMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Имя"
-            android:textColor="#4C4C4C" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Почта" />
 
-        <TextView
-            android:id="@+id/pName"
+        <EditText
+            android:id="@+id/apSurname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Фамилия" />
 
-        <TextView
-            android:id="@+id/tx"
+        <EditText
+            android:id="@+id/apName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Фамилия"
-            android:textColor="#4C4C4C" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Имя" />
 
-        <TextView
-            android:id="@+id/pSurname"
+        <EditText
+            android:id="@+id/apPatronymic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Отчество" />
 
-        <TextView
-            android:id="@+id/tx2"
+        <Spinner
+            android:id="@+id/apC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Отчество"
-            android:textColor="#4C4C4C" />
+            android:layout_marginBottom="8dp"
+            android:entries="@array/course"
+            android:minHeight="45dp" />
 
-        <TextView
-            android:id="@+id/pPatronymic"
+        <Spinner
+            android:id="@+id/apS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="8dp"
+            android:entries="@array/specialization"
+            android:minHeight="45dp" />
 
-        <TextView
-            android:id="@+id/tx3"
+        <EditText
+            android:id="@+id/apPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Почта"
-            android:textColor="#4C4C4C" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Пароль" />
 
-        <TextView
-            android:id="@+id/pMail"
+        <EditText
+            android:id="@+id/apRepass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tx4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Специализация"
-            android:textColor="#4C4C4C" />
-
-        <TextView
-            android:id="@+id/pS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tx5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Курс"
-            android:textColor="#4C4C4C" />
-
-        <TextView
-            android:id="@+id/pC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Повтор" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/apCreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Создать"
+        app:layout_constraintBottom_toTopOf="@+id/exitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/exitBtn"

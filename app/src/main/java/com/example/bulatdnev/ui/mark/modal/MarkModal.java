@@ -5,6 +5,7 @@ public class MarkModal {
     private long time;
     private String mark;
     private String teacher;
+    private String Uid;
 
 
 
@@ -16,12 +17,14 @@ public class MarkModal {
     public MarkModal(String lesson,
                      long time,
                      String mark,
-                     String teacher) {
+                     String teacher,
+                     String Uid) {
 
         this.lesson = lesson;
         this.time = time;
         this.mark = mark;
         this.teacher = teacher;
+        this.Uid = Uid;
 
 
     }
@@ -57,6 +60,14 @@ public class MarkModal {
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 }
 

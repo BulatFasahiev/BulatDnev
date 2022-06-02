@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,11 @@ import androidx.annotation.Nullable;
 import com.example.bulatdnev.R;
 import com.example.bulatdnev.ui.home.activity.NewsActivity;
 import com.example.bulatdnev.ui.mark.modal.MarkModal;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,7 +51,27 @@ public class MarkAdapter extends ArrayAdapter<MarkModal> {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
         time.setText(sdf.format(modal.getTime()));
         lesson.setText(modal.getLesson());
-        teacher.setText(modal.getTeacher());
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("Users").document(modal.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        teacher.setText(document.getString("surname")+" "+document.getString("name"));
+
+                    } else {
+                        teacher.setText("Неизвесно");
+
+                    }
+                } else {
+                    teacher.setText("Ошибка");
+
+                }
+            }
+        });
+
+
         mark.setText(modal.getMark());
 
 

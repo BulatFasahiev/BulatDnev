@@ -13,6 +13,17 @@
         <item>Музыкальное</item>
         <item>Программирование в компьютерных системах</item>
     </string-array>
+    <string-array name="marks">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>Н</item>
+    </string-array>
+    <string-array name="empty">
+
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
