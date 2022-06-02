@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1072767849265",
+    "firebase_url": "https://dnev-3b0ba-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "dnev-3b0ba",
+    "storage_bucket": "dnev-3b0ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072767849265:android:8b2de9af6f8c3e2c931610",
+        "android_client_info": {
+          "package_name": "com.example.bulatdnev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072767849265-emh7sclngjg266il6k5o2bb19qhm2dh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWbWoM44CyBJVnXGLzAmUMQVtCMSpoi9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072767849265-emh7sclngjg266il6k5o2bb19qhm2dh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
